@@ -1,0 +1,139 @@
+.row {
+    margin: 0;
+}
+
+#header{ display: block; margin: auto; width: 100%; box-sizing: border-box; height: auto; 
+        margin-top: 10px; box-sizing: border-box; padding: 0px; }
+#header #titulo{ box-sizing: border-box; padding: 0px 0; width: 600px; float: left; max-width: 50%; }
+#header #titulo h1{ width: 750px; max-width: 100%; /*border-left: solid 2px #8e1130;*/ margin: 0 0 0 20px; 
+                    float: left; /*border-right: solid 2px #8e1130; */ 
+                    box-sizing: border-box; padding: 15px 35px; 
+                    /*font-weight: bold; font-size: 40px;*/
+                    /*color: #2e2556; color: #8E1130; */ height: 110px; display:block; 
+                    text-align: center; /*display: flex;  align-items: center; justify-content: center; */}
+#header #titulo h1 span{ font-weight: bold; display: block; width: 100%; height: auto; }
+#header #titulo h1.size_40px, #header #titulo h1.size_40px span{ font-size: 40px; }
+#header #titulo h1.size_30px, #header #titulo h1.size_30px span{ font-size: 30px; }
+#header #titulo h1.size_25px, #header #titulo h1.size_25px span{ font-size: 25px; }
+
+#header #titulo img {
+    height: 110px;
+    display: inline-block;
+    margin-left: 30px;
+}
+
+#logos{ display: block; min-height: 90px; width: 1200px; max-width: 100%;  margin: auto; }
+.nivel-2 #logos{ background: url(../images/fondo-cabecera.jpg) top center no-repeat; }
+#header h2.seccion {  color: #fff;  left: 0;  line-height: 40px;  position: static;  text-align: center;  width: 100%;  margin-top: -85px; }
+#logos #logo{ display: block; float: left; height: 90px;  }
+#logos #logo-sepa{ display: block; float: right; height: 90px;  }
+#logos #logo-sepa a{ float: right; }
+#logos img{ height: 90px; width: auto; }
+
+
+#login {
+    display: block;
+    width: 50%;
+    max-width: 100%;
+    margin: auto;
+    padding: 50px 30px;
+    background-color: #9dc09d;
+
+    -webkit-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.15);
+
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+
+    box-sizing: border-box;
+}
+
+
+#login h1 {
+    font-size: 250%;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#login input {
+    font-family: 'Overpass', sans-serif;
+    font-size: 110%;
+    color: #1b262c;
+    background-color: #007bff;
+    display: block;
+    width: 100%;
+    height: 40px;
+
+    margin-bottom: 10px;
+    padding: 5px 5px 5px 10px;
+
+    box-sizing: border-box;
+
+    border: none;
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+}
+
+#login input::placeholder {
+    font-family: 'Overpass', sans-serif;
+    color: #E4E4E4;
+}
+
+#login button {
+    font-family: 'Overpass', sans-serif;
+    font-size: 110%;
+    color: #1b262c;
+    height: 50px;
+    border: none;
+    margin-top: 10px;
+
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+
+    background-color: #bbe1fa;
+}
+
+#login button:hover {
+    background-color: #0f4c75;
+    color: #bbe1fa;
+}
+
+.login-submit {
+    width: 50%;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.bt-submit {
+    width: 50%;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.login-ico {
+    width: 60px;
+}
+
+
+.titulo {
+    font-size: 30px;
+    /* text-align: center; */
+}
+
+.cuadrotitulo {
+    flex: 1;
+    /* El texto se expandirá para llenar el espacio restante */
+    text-align: center;
+    /* Alinea el texto en el centro horizontalmente */
+}
+
+.estiloimagenes {
+    width: 500px;
+    height: 500px;
+}
+

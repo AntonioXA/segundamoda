@@ -1,0 +1,117 @@
+<!-- necesario para que funcionen las listas de los filtros -->
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/estilo.css">
+
+<!------------------------------------------------------------>
+<script>
+  $(document).ready(function() {
+      $('li.estado').click(function(){
+        var valor = $(this).data('valor');
+        var id = $(this).data('id');
+        $("#filter-estado").val(valor);
+        $("#estado-menu").text(id);
+        if (valor == 0) {
+          $("#estado-menu").addClass('btn-outline-secondary');
+          $("#estado-menu").removeClass('btn-secondary');
+        }
+        else {
+          $("#estado-menu").addClass('btn-secondary');
+          $("#estado-menu").removeClass('btn-outline-secondary');
+        }
+      });
+      $('li.categoria').click(function(){
+        var valor = $(this).data('valor');
+        var id = $(this).data('id');
+        $("#filter-categoria").val(valor);
+        $("#categoria-menu").text(id);
+        if (valor == 0) {
+          $("#categoria-menu").addClass('btn-outline-secondary');
+          $("#categoria-menu").removeClass('btn-secondary');
+        }
+        else {
+          $("#categoria-menu").addClass('btn-secondary');
+          $("#categoria-menu").removeClass('btn-outline-secondary');
+        }
+      });
+  });
+</script>
+
+<script>
+// Obtén referencias a los elementos de entrada y botón
+const searchInput = document.getElementById('search-text');
+const filterButton = document.getElementById('aplicar-filtros');
+
+// Almacena el valor de búsqueda actual
+let currentSearchValue = '';
+
+// Agrega un evento click al botón de filtro
+filterButton.addEventListener('click', () => {
+  // Aquí debes agregar la lógica para aplicar el filtro
+  // En este ejemplo, simplemente mostramos el valor de búsqueda en la consola.
+  console.log('Filtrar por: ' + currentSearchValue);
+});
+
+// Agrega un evento input a la barra de búsqueda
+searchInput.addEventListener('input', () => {
+  // Actualiza el valor de búsqueda actual cuando se escriba en la barra
+  currentSearchValue = searchInput.value;
+});
+</script>
+
+
+<nav class="navbarbg-dark">
+  <form class="container-fluid justify-content-start m-0" name="filter-form" role="search" method='post'>
+    <div class="btn-group me-2" role="group" >
+      <?php 
+        if ($estadoFilterTxt == 'Estado') $clase = "btn btn-sm btn-outline-secondary dropdown-toggle";
+        else $clase = "btn bt-sm btn-secondary dropdown-toggle";
+      ?>
+      <button id="estado-menu" type="button" class="<?php echo $clase;?>" data-bs-toggle="dropdown" aria-expanded="false">
+        <?php echo $estadoFilterTxt;?>
+      </button>
+      <ul class="dropdown-menu">
+        <li class="estado" data-valor="0" data-id="Estado"><a class="dropdown-item">Todos</a></li>
+        <?php foreach (ESTADOS_MAT as $key=>$valor) {
+            echo "<li class=\"estado\" data-valor=\"$key\" data-id=\"$valor\"><a class=\"dropdown-item\" >$valor</a></li>";
+        } ?>
+        <!-- <li class="estado" data-valor="1" data-id="Nuevo"><a class="dropdown-item" >Nuevo</a></li>
+        <li class="estado" data-valor="2" data-id="semiNuevo"><a class="dropdown-item">Seminuevo</a></li>
+        <li class="estado" data-valor="3" data-id="Usado"><a class="dropdown-item">Usado</a></li> -->
+      </ul>
+    </div>
+    <div class="btn-group me-2" role="group" >
+      <?php 
+        if ($categoriaFilterTxt == 'Categoria') $clase = "btn btn-sm btn-outline-secondary dropdown-toggle";
+        else $clase = "btn btn-sm btn-secondary dropdown-toggle";
+      ?>
+      <button id="categoria-menu" type="button" class="<?php echo $clase;?>" data-bs-toggle="dropdown" aria-expanded="false">
+        <?php echo $categoriaFilterTxt;?>
+      </button>
+                        
+      <ul class="dropdown-menu">
+        <li class="categoria" data-valor="0" data-id="Categoria"><a class="dropdown-item">Todas</a></li>
+        <?php foreach (CATEGORIAS as $key=>$valor) {
+            echo "<li><hr class=\"dropdown-divider\"></li>";
+            echo "<li class=\"categoria\" data-valor=\"$key\" data-id=\"$valor\"><a class=\"dropdown-item\" >$valor</a></li>";
+            //echo "<ul>";
+            foreach (SUBCATEGORIAS[$key] as $sk=>$sv) {
+              echo "<li class=\"categoria\" data-valor=\"$sk\" data-id=\"$sv\"><a class=\"dropdown-item\" >$sv</a></li>";              
+            }
+            //echo "</ul>";
+        } ?>
+        
+      </ul>
+    </div>
+    <div class="btn-group me-2 w-25" role="group" >
+      <input type="search" class="form-control-sm w-100" placeholder="Buscar por nombre o descripción..." aria-label="Search" id="search-text" name="search-text" value="<?php echo $filtros['text']?>">
+    </div>        
+    <input class="btn btn-sm btn-primary" type="submit" value="Aplicar Filtros" id="aplicar-filtros" name="aplicar-filtros" >
+    <input class="btn btn-sm btn-primary ms-2" type="submit" value="Borrar Filtros" name="borrar-filtros">
+    <input type="hidden" id="filter-estado" name="filter-estado" value="">
+    <input type="hidden" id="filter-categoria" name="filter-categoria" value="">
+    <!-- <input type="hidden" id="search-text" name="search-text" value="search-text"> -->
+  </form>
+  
+</nav>
+
+

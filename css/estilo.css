@@ -1,0 +1,132 @@
+/* Estilos generales */
+/*
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+*/
+
+/* Estilos del formulario */
+.form-group {
+  /* margin-bottom: 20px; */
+  text-align: left;
+  /* Alinea el texto del formulario a la izquierda */
+}
+
+#descripcion {
+  height: 100px;
+  resize: none;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+}
+
+/*
+input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+
+}
+*/
+
+/* Estilo para el select */
+#categoria {
+  width: auto;
+  /* Ancho automático basado en el contenido */
+  max-width: 100%;
+  /* Establece el ancho máximo para evitar que se desborde el contenedor */
+  box-sizing: border-box;
+  /* Incluye el padding en el cálculo del ancho */
+}
+
+/* Estilos para los contenedores de las imágenes */
+/* .container {
+  display: inline-block;
+  
+  text-align: center;
+
+  margin: 10px;
+  
+} */
+
+.box {
+  width: 230px;
+  height: 230px;
+  border: 2px solid;
+  margin: 0 auto;
+  /* Centra los cuadros horizontalmente */
+  background-size: contain;
+  /* Ajusta la imagen al tamaño del cuadro sin recortarla */
+  background-position: center;
+  /* Centra la imagen horizontal y verticalmente */
+  background-repeat: no-repeat;
+  /* Evita la repetición de la imagen */
+}
+
+.file-button {
+  display: block;
+  /* Hace que el botón aparezca en una nueva línea */
+  margin-top: 10px;
+  /* Espacio entre el cuadro y el botón */
+}
+
+
+
+.imagen-contenedor {
+  max-width: 500px;
+  /* Establece el ancho máximo deseado */
+  height: auto;
+  /* Permite que la altura se ajuste automáticamente a la relación de aspecto original */
+  object-fit: cover;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Aplica el tamaño máximo y la propiedad object-fit a las imágenes dentro del contenedor */
+.imagen-contenedor img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Esto reescalará la imagen para que se ajuste al contenedor sin distorsionarla */
+}
+
+.navbarbg-dark {
+  background-color: #fdeecd;
+  text-align: left;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
