@@ -43,6 +43,7 @@ if (isset($_POST['enviar2'])) {
             $conn = null;
         }
     }
+    reg_historial($idAnuncio, "EDI", $_SESSION['usuario']);
 }
 
 ?>
