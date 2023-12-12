@@ -888,6 +888,7 @@ function detalle_oferta($opcion, $id_oferta)
 	//Datos de la oferta
 	echo "<li class=\"list-group-item\"><p class=\"$bg text-center\">Datos de la Oferta</p>";
 	echo "<div class=\"float-start\">";
+	echo "<p class=\"card-text\">Nombre: " . $oferta['Nombre'] . "</p>";
 	echo "<p class=\"card-text\">Descripción: " . $oferta['Descripcion'] . "</p>";
 	echo "<p class=\"card-text\">Categoría: " . $oferta['NombreCategoria'] . "</p>";
 	echo "<p class=\"card-text\">Estado: " . $oferta['Estado'] . "</p>";
