@@ -189,8 +189,7 @@ function opciones_detalle($id, $ofertante, $estado_oferta, $last_act, $npeticion
                $opciones['O'][] = array("BT" => "Archivar la oferta", "ACT" => "ARC", "TIPO" => 'SUBMIT');
                break;
          }
-      } 
-      else { //opciones para el interesado
+      } else { //opciones para el interesado
          if ($estado_oferta == 2 && $linteres == 0) {
             $opciones['O'][] = array("BT" => "Realizar una Peticion", "ACT" => "PET", "TIPO" => 'SUBMIT');
          }
