@@ -150,6 +150,8 @@ function opciones_detalle($id, $ofertante, $estado_oferta, $last_act, $npeticion
             $enable = '';
          else
             $enable = 'disabled';
+         if($last_act == 'EDI')
+            $enable = '';
          $opciones['S'][] = array("BT" => "Aprobar oferta", "ACT" => "VIS", "TIPO" => 'SUBMIT', "ENABLE" => $enable);
          //RECHAZAR: si la oferta es nueva o ha sido editada
          if ($last_act == 'NOV')
