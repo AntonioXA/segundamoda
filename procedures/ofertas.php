@@ -398,7 +398,7 @@ function cancelar_oferta($id_oferta)
     try {
 		$sqlinsert = "UPDATE anuncio SET Visibilidad = 6 WHERE IdAnuncio = :id_oferta";
 		$stmt = $conn->prepare($sqlinsert);
-		$stmt->bindParam(':id_oferta', $oferta);
+		$stmt->bindParam(':id_oferta', $id_oferta);
 
 		$stmt->execute();
 
